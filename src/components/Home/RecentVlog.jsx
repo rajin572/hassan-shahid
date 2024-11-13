@@ -56,11 +56,15 @@ const RecentVlog = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   return (
-    <motion.div ref={ref} className="py-20  overflow-hidden">
-      <div>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary-color text-center ">
-          RECENT BLOG
+    <motion.div ref={ref} className=" overflow-hidden">
+      <div className="mb-10 flex justify-center items-center flex-col">
+        <h1 className="text-5xl sm:text-6xl mb-2 font-bold place-items-start text-base-color/10">
+          Blog
         </h1>
+        <p className="text-secondary-color font-bold mb-3 text-2xl sm:text-3xl  -mt-12 sm:-mt-[54px]">
+          Recent Blog!
+        </p>
+        <div className="w-48 h-1 bg-base-color rounded mx-auto"></div>
       </div>
       <Container>
         <motion.div

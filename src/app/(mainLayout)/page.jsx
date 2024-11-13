@@ -1,3 +1,4 @@
+import ContactMe from "@/components/ContactMe/ContactMe";
 import AboutMe from "@/components/Home/AboutMe";
 import Banner from "@/components/Home/Banner";
 import RecentVlog from "@/components/Home/RecentVlog";
@@ -9,8 +10,9 @@ const page = () => {
     <div>
       <Banner />
       <AboutMe />
-      <Testimonial />
       <RecentVlog />
+      <Testimonial />
+      <ContactMe />
       <div className="bg-gray-950 h-screen"></div>
     </div>
   );
