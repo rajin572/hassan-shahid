@@ -1,7 +1,9 @@
 import ContactMe from "@/components/ContactMe/ContactMe";
 import AboutMe from "@/components/Home/AboutMe";
 import Banner from "@/components/Home/Banner";
+import AcademicRecords from "@/components/Home/Education";
 import RecentVlog from "@/components/Home/RecentVlog";
+import Skills from "@/components/Home/Skills";
 import Testimonial from "@/components/Home/Testimonial";
 import React from "react";
 
@@ -10,10 +12,10 @@ const page = () => {
     <div>
       <Banner />
       <AboutMe />
-      <RecentVlog />
+      <AcademicRecords />
+      <Skills />
       <Testimonial />
       <ContactMe />
-      <div className="bg-gray-950 h-screen"></div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import ContactFrom from "./ContactFrom";
 import ContactMeCard from "./ContactMeCard";
+import AnimatedUnderline from "../ui/Animation/AnimatedUnderline";
 
 const intro = {
   hidden: { opacity: 0 },
@@ -33,15 +34,13 @@ const ContactMe = () => {
 
   const inView = useInView(view);
   return (
-    <div className="py-20 mt-20 mb-20">
+    <div className="py-20 mb-20">
       <div className="my-10 flex justify-center items-center flex-col">
-        <h1 className="text-5xl sm:text-6xl mb-2 font-bold place-items-start text-base-color/10">
-          Contact
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl  font-bold place-items-start text-base-color mb-5">
+          Contact With Me
         </h1>
-        <p className="text-secondary-color font-bold mb-3 text-2xl sm:text-3xl  -mt-12 sm:-mt-[54px]">
-          Connect With Me!
-        </p>
-        <div className="w-48 h-1 bg-base-color rounded mx-auto"></div>
+
+        <AnimatedUnderline />
       </div>
       <Container>
         <motion.div
@@ -54,7 +53,7 @@ const ContactMe = () => {
             <ContactMeCard />
           </motion.div>
           <motion.div variants={introChildren}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl text-center mb-5 font-bold place-items-start text-base-color">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl text-center mb-10 font-bold place-items-start text-secondary-color">
               Get In Touch
             </h1>
           </motion.div>

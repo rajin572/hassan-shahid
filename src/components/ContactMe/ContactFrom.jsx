@@ -166,7 +166,7 @@ const ContactFrom = () => {
           />
         </div>
         <div className=" mt-6 col-span-2">
-          <button className="bg-transparent w-full flex items-center justify-center border-2 border-base-color px-4 py-2 rounded mt-5 text-base-color hover:bg-secondary-color hover:border-secondary-color hover:text-base-color duration-500">
+          <button className="bg-transparent w-full flex items-center justify-center border-2 border-base-color px-4 py-2 rounded mt-5 text-base-color hover:bg-secondary-color hover:border-secondary-color hover:text-primary-color duration-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

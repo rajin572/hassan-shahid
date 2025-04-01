@@ -25,7 +25,7 @@ const Navbar = () => {
       setHidden(false);
     }
 
-    if (latest > 10) {
+    if (latest > 0) {
       setScrolled(true);
     } else setScrolled(false);
   });
@@ -38,8 +38,10 @@ const Navbar = () => {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={`z-[999] text-base-color ${
-        scrolled ? "bg-primary-color" : "!bg-transparent !shadow-none"
-      } ${mobileMenuOpen ? "shadow-none !bg-primary-color" : "shadow"}`}
+        scrolled
+          ? "bg-primary-color py-0 transition-all duration-500 shadow"
+          : "!bg-transparent !shadow-none py-1 transition-all duration-500"
+      } ${mobileMenuOpen ? "shadow-none !bg-primary-color" : ""}`}
     >
       <Container>
         <header className=" mx-auto py-3 flex justify-between items-center z-50 ">
@@ -50,8 +52,8 @@ const Navbar = () => {
               className="text-2xl cursor-pointer flex justify-center items-end gap-1"
             >
               <span className="font-extrabold text-primary-bastext-base-color underline ">
-                <span className="text-secondary-color">H</span>assan
-                <span className="text-secondary-color">S</span>hahid
+                <span className="text-secondary-color">S</span>ahid
+                <span className="text-secondary-color">H</span>ossain
               </span>
             </Link>
           </div>

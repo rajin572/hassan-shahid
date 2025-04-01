@@ -14,6 +14,7 @@ import "swiper/css/effect-fade";
 
 import { motion, useInView } from "framer-motion";
 import TestimonialCard from "../ui/Testimonial";
+import AnimatedUnderline from "../ui/Animation/AnimatedUnderline";
 
 const testimonials = [
   {
@@ -60,13 +61,11 @@ const Testimonial = () => {
   return (
     <motion.div ref={ref} className="py-20 overflow-hidden">
       <div className="my-10 flex justify-center items-center flex-col">
-        <h1 className="text-5xl sm:text-6xl mb-2 font-bold place-items-start text-base-color/10">
-          Testimonial
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl  font-bold place-items-start text-base-color mb-5">
+          Testimonials
         </h1>
-        <p className="text-secondary-color font-bold mb-3 text-2xl sm:text-3xl  -mt-12 sm:-mt-[54px]">
-          What Are People Saying
-        </p>
-        <div className="w-48 h-1 bg-base-color rounded mx-auto"></div>
+
+        <AnimatedUnderline />
       </div>
 
       <Container>
@@ -75,13 +74,13 @@ const Testimonial = () => {
             initial={{ x: -100, opacity: 0 }}
             animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
             transition={{ duration: 1.5 }}
-            className="hidden lg:block w-full lg:w-1/5 min-h-[687px] bg-[#FF6D5A]"
+            className="hidden lg:block w-full lg:w-1/5 min-h-[687px] bg-[#19363D]"
           ></motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full lg:w-[90%] mx-auto block lg:absolute lg:top-[50%] lg:left-[50%] lg:translate-x-[-50%] lg:translate-y-[-50%] lg:max-h-[450px]"
+            className="w-full lg:w-[95%] mx-auto block lg:absolute lg:top-[50%] lg:left-[50%] lg:translate-x-[-50%] lg:translate-y-[-50%] lg:max-h-[450px]"
           >
             <Swiper
               slidesPerView={1}
@@ -112,10 +111,10 @@ const Testimonial = () => {
               ))}
             </Swiper>
             {/* Custom Navigation Buttons */}
-            <div className="custom-prev select-none  absolute top-[50%] left-0 md:-left-5 z-10 cursor-pointer text-white text-2xl bg-[#12103E] rounded py-1 px-2 -ml-3 md:ml-0">
+            <div className="custom-prev absolute top-[50%] left-4 z-10 cursor-pointer text-[#19363D] text-2xl bg-[#D3EBE7] rounded py-1 px-2 -ml-3 md:ml-0">
               <GoArrowLeft />
             </div>
-            <div className="custom-next select-none  absolute top-[50%] right-0 md:-right-5 z-10 cursor-pointer text-white text-2xl bg-[#12103E] rounded py-1 px-2 -mr-3 md:mr-0">
+            <div className="custom-next absolute top-[50%] right-4 z-10 cursor-pointer text-[#19363D] text-2xl bg-[#D3EBE7] rounded py-1 px-2 -mr-3 md:mr-0">
               <GoArrowRight />
             </div>
           </motion.div>
