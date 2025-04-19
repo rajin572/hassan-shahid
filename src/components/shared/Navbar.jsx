@@ -44,16 +44,21 @@ const Navbar = () => {
       } ${mobileMenuOpen ? "shadow-none !bg-primary-color" : ""}`}
     >
       <Container>
-        <header className=" mx-auto py-3 flex justify-between items-center z-50 ">
+        <header className="w-full py-3 flex justify-between items-center z-50 ">
           {/* //*Company name */}
           <div>
             <Link
               href="/"
-              className="text-2xl cursor-pointer flex justify-center items-end gap-1"
+              className="text-nowrap cursor-pointer flex justify-center items-end"
             >
-              <span className="font-extrabold text-primary-bastext-base-color underline ">
-                <span className="text-secondary-color">S</span>ahid
-                <span className="text-secondary-color">H</span>ossain
+              <span className="text-2xl font-semibold text-secondary-color ">
+                <span className="text-base-color font-extrabold text-2xl italic">
+                  {"< "}
+                </span>
+                SahidHossain
+                <span className="text-base-color font-extrabold text-2xl italic">
+                  {" />"}
+                </span>
               </span>
             </Link>
           </div>
@@ -61,8 +66,8 @@ const Navbar = () => {
           <nav
             className={
               mobileMenuOpen
-                ? " w-full lg:static absolute top-[50px] left-0 lg:bg-none bg-primary-color transition-all lg:z-0 -z-50 lg:border-none shadow-md"
-                : " w-full lg:static absolute top-[-550px] left-0 transition-all lg:z-0 -z-50"
+                ? " w-full lg:w-fit lg:static absolute top-[50px] left-0 lg:bg-none bg-primary-color transition-all lg:z-0 -z-50 lg:border-none shadow-md"
+                : " w-full lg:w-fit lg:static absolute top-[-550px] left-0 transition-all lg:z-0 -z-50"
             }
           >
             {/* //* For Laptop or Desktop */}
@@ -103,6 +108,16 @@ const Navbar = () => {
               </ul>
             </div>
           </nav>
+          <div className="hidden lg:block">
+            <Link
+              href="https://drive.google.com/file/d/1cyOafJCpfwyMgAot5Td-u4LQZ4Oq7vJm/view?usp=sharing"
+              target="_blank"
+            >
+              <button className="!text-sm text-nowrap border px-3 py-1.5 rounded bg-secondary-color border-secondary-color text-primary-color duration-500">
+                My Resume
+              </button>
+            </Link>
+          </div>
           {/* //*Icons */}
           <div className="lg:hidden select-none">
             {mobileMenuOpen ? (

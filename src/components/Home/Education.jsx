@@ -11,28 +11,32 @@ const records = [
     institute: "Khilgaon Model College",
     year: "2013",
     cgpa: "2nd Class",
-    certificate: "",
+    certificate:
+      "https://drive.google.com/file/d/1MST2nPldiPgRQ4zXTp1XEjoTn4EOBfqw/view?usp=sharing",
   },
   {
     title: "Bachelor in Business Studies - BBS in Accounting",
     institute: "Habibullah Bahar College",
     year: "2012",
     cgpa: "2nd Class",
-    certificate: "",
+    certificate:
+      "https://drive.google.com/file/d/1RrqqOAP9ZIuPIZiTWUKfNVaJzNcgVTWN/view?usp=sharing",
   },
   {
     title: "Higher Secondary Certificate - HSC in Business Studies",
     institute: "Khilgaon Model College",
     year: "2008",
     gpa: "3.4 out of 5",
-    certificate: "",
+    certificate:
+      "https://drive.google.com/file/d/15jzHfITB00fmeDyOKS_NYboKv5ODWOBS/view?usp=sharing",
   },
   {
     title: "Secondary School Certificate -SSC in Business Studies",
     institute: "Dharmarajika Orphanage Residential High School",
     year: "2008",
     gpa: "4.1 out of 5",
-    certificate: "",
+    certificate:
+      "https://drive.google.com/file/d/1BJG3mexaHfs9JS48CUoagRqCarpJlIKb/view?usp=sharing",
   },
 ];
 
@@ -42,10 +46,10 @@ const AcademicRecords = () => {
   return (
     <motion.div
       ref={ref}
-      className="overflow-hidden py-14 sm:py-16 lg:py-20 bg-highlight-color"
+      className="overflow-hidden pt-20 pb-10 bg-highlight-color"
     >
       <Container>
-        <div className=" mt-10">
+        <div className="">
           <div className="mb-10 sm:mb-12 lg:mb-16">
             <Revel delay={0}>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] font-semibold text-secondary-color mb-7">
@@ -64,7 +68,7 @@ const AcademicRecords = () => {
               {records.map((item, index) => (
                 <div key={index} className=" mb-10">
                   <Revel delay={0.1}>
-                    <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-base-color ">
+                    <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-secondary-color ">
                       {item.title}
                     </h2>
                   </Revel>
@@ -90,7 +94,7 @@ const AcademicRecords = () => {
                       <Link
                         href={item.certificate}
                         target={"_blank"}
-                        className="hover:underline  px-1"
+                        className="hover:underline text-secondary-color px-1"
                       >
                         View certificate
                       </Link>

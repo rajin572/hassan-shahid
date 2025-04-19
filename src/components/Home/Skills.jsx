@@ -162,9 +162,9 @@ const softSkills = [
 
 const Skills = () => {
   return (
-    <div className="py-20  overflow-hidden">
-      <div className="my-10 flex justify-center items-center flex-col">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl  font-bold place-items-start text-base-color mb-5">
+    <div className="py-20 bg-background-color overflow-hidden">
+      <div className="mb-10 flex justify-center items-center flex-col">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl  font-bold place-items-start text-secondary-color mb-5">
           My Expertise Skills
         </h1>
 
@@ -173,7 +173,7 @@ const Skills = () => {
       <Container>
         <div>
           <div className=" mt-20">
-            <h1 className="text-3xl font-bold place-items-start text-secondary-color">
+            <h1 className="text-3xl font-bold place-items-start text-base-color">
               Tools & Technologies :
             </h1>
             <div>
@@ -181,7 +181,7 @@ const Skills = () => {
             </div>
           </div>
           <div className=" mt-20">
-            <h1 className="text-3xl font-bold place-items-start text-secondary-color">
+            <h1 className="text-3xl font-bold place-items-start text-base-color">
               Programming Language :
             </h1>
             <div>
@@ -190,7 +190,7 @@ const Skills = () => {
           </div>
 
           <div className=" mt-20">
-            <h1 className="text-3xl font-bold place-items-start text-secondary-color">
+            <h1 className="text-3xl font-bold place-items-start text-base-color">
               Soft Skills:
             </h1>
             <div>
