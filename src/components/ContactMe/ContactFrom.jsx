@@ -4,44 +4,34 @@ import React, { RefObject, useRef } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
+import { sendContactEmailAction } from "@/app/actions/contactActions";
 
 const ContactFrom = () => {
   const form = useRef(null);
   const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = async (data) => {
-    const toastId = toast.loading("Sending Message....");
+  const onFinish = async (values) => {
+    const toastId = toast.loading("Message Sending...");
+
     try {
-      if (form.current) {
-        emailjs
-          .sendForm("service_lwrro8b", "template_muwfadg", form.current, {
-            publicKey: "ZeWFlpihbuwya15gr",
-          })
-          .then(
-            () => {
-              toast.error("Successfully Send The Message", {
-                id: toastId,
-                duration: 1000,
-              });
-              reset();
-            },
-            (error) => {
-              toast.error(error.text, {
-                id: toastId,
-                duration: 1500,
-              });
-            }
-          );
-      } else {
-        toast.error("Form reference is null.", {
+      const data = await sendContactEmailAction({ ...values });
+      if (data.success) {
+        toast.success("Message Send Successfully", {
           id: toastId,
-          duration: 1500,
+          duration: 2000,
+        });
+        reset(); // Reset the form fields after successful submission
+      } else {
+        toast.error(data.error, {
+          id: toastId,
+          duration: 2000,
         });
       }
-    } catch (err) {
-      toast.error(String(err), {
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong", {
         id: toastId,
-        duration: 1500,
+        duration: 2000,
       });
     }
   };
@@ -50,7 +40,7 @@ const ContactFrom = () => {
       <form
         ref={form}
         className="md:w-[80%] mx-auto"
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onFinish)}
       >
         <div className="mb-5">
           <label className="flex items-center text-foreground">
@@ -73,11 +63,11 @@ const ContactFrom = () => {
           </label>
           <input
             type="text"
-            {...register("user_name")}
-            name="user_name"
+            {...register("name")}
+            name="name"
             placeholder="Enter Your Name"
             required
-            className="border focus:border-secondary-color/50 focus:ring-secondary-color/50 p-2 outline-none w-full mt-3 rounded"
+            className="border border-secondary-color/50 bg-transparent text-base-color placeholder:!text-base-color/50 focus:ring-secondary-color/50 p-2 outline-none w-full mt-3 rounded"
           />
         </div>
         <div className="mb-5">
@@ -101,41 +91,14 @@ const ContactFrom = () => {
           </label>
           <input
             type="email"
-            {...register("user_email")}
-            name="user_email"
+            {...register("email")}
+            name="email"
             placeholder="Enter Your Email"
             required
-            className="border focus:border-secondary-color/50 focus:ring-secondary-color/50 p-2 outline-none w-full mt-3 rounded"
+            className="border border-secondary-color/50 bg-transparent text-base-color placeholder:!text-base-color/50 focus:ring-secondary-color/50 p-2 outline-none w-full mt-3 rounded"
           />
         </div>
-        <div className="mb-5">
-          <label className="flex items-center text-foreground">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-captions text-secondary-color"
-            >
-              <rect width="18" height="14" x="3" y="5" rx="2" ry="2" />
-              <path d="M7 15h4M15 15h2M7 11h2M13 11h4" />
-            </svg>
-            <span> Subject :</span>
-          </label>
-          <input
-            type="text"
-            {...register("from_name")}
-            name="from_name"
-            placeholder="Enter Your Subject"
-            required
-            className="border focus:border-secondary-color/50 focus:ring-secondary-color/50 p-2 outline-none w-full mt-3 rounded"
-          />
-        </div>
+
         <div className="mb-5 col-span-2">
           <label className="flex items-center text-foreground">
             <svg
@@ -162,11 +125,11 @@ const ContactFrom = () => {
             name="message"
             placeholder="Enter Your Message"
             required
-            className="h-40 border focus:border-secondary-color/50 focus:ring-secondary-color/50 p-2 outline-none w-full mt-3 rounded"
+            className="h-40 border border-secondary-color/50 bg-transparent text-base-color placeholder:!text-base-color/50 focus:ring-secondary-color/50 p-2 outline-none w-full mt-3 rounded"
           />
         </div>
         <div className=" mt-6 col-span-2">
-          <button className="bg-transparent w-full flex items-center justify-center border-2 border-base-color px-4 py-2 rounded mt-5 text-base-color hover:bg-secondary-color hover:border-secondary-color hover:text-primary-color duration-500">
+          <button className="w-full flex items-center justify-center border px-4 py-2 rounded mt-5 bg-secondary-color border-secondary-color text-primary-color duration-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

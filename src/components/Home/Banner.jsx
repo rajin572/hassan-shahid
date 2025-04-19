@@ -60,7 +60,7 @@ const icon2 = {
 
 const Banner = () => {
   return (
-    <div className="bg-highlight-color w-full py-20 min-h-[100vh] overflow-hidden flex flex-col items-center justify-center">
+    <div className="bg-background-color w-full py-20 min-h-[100vh] overflow-hidden flex flex-col items-center justify-center">
       <Container>
         <div className=" lg:mt-10 xl:mt-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center justify-items-center w-full h-full gap-10 mt-5 lg:mt-0">
@@ -101,7 +101,7 @@ const Banner = () => {
                 <Revel delay={0}>
                   <motion.p
                     variants={introChildren}
-                    className="text-slate-700 text-sm"
+                    className="text-base-color/60 text-sm"
                   >
                     I am a dedicated and results-driven professional with a
                     robust academic background in Enterprise System Analysis &
@@ -159,7 +159,7 @@ const Banner = () => {
                   <motion.div variants={introChildren}>
                     {" "}
                     <Link
-                      href="https://drive.google.com/file/d/1MHez5sR-ZpAFsASz47ixSYpz6tONVz9l/view?usp=sharing "
+                      href="https://drive.google.com/file/d/1cyOafJCpfwyMgAot5Td-u4LQZ4Oq7vJm/view?usp=sharing"
                       target="_blank"
                     >
                       <button className="bg-transparent border-2 border-secondary-color px-4 py-2 rounded mt-5 text-base-color hover:bg-secondary-color hover:border-secondary-color hover:text-primary-color duration-500">

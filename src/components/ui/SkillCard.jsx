@@ -39,7 +39,9 @@ const SkillCard = ({ skill }) => {
         />
         <p className="mt-5 font-semibold text-2xl ">{skill?.percentage}%</p>
       </div>
-      <p className="font-bold text-lg mt-2">{skill?.skillName}</p>
+      <p className="font-bold text-lg text-secondary-color mt-2">
+        {skill?.skillName}
+      </p>
     </motion.div>
   );
 };

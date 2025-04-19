@@ -15,13 +15,26 @@ const Footer = () => {
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="lg:fixed lg:bottom-0 h-auto w-full">
-        <footer className="pt-16 pb-5 bg-highlight-color">
+        <footer className="pt-16 pb-5 bg-primary-color text-base-color">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:justify-items-center items-start pt-20">
-              <div className="mb-5 lg:mb-0">
-                <h1 className=" mb-3 text-secondary-color font-bold text-3xl">
-                  Sahid Hossain
-                </h1>
+              <div className="mb-5">
+                <div>
+                  <Link
+                    href="/"
+                    className="text-2xl cursor-pointer flex justify-start items-center gap-1 mb-1"
+                  >
+                    <span className="text-2xl font-semibold text-secondary-color ">
+                      <span className="text-base-color font-extrabold text-2xl italic">
+                        {"< "}
+                      </span>
+                      SahidHossain
+                      <span className="text-base-color font-extrabold text-2xl italic">
+                        {" />"}
+                      </span>
+                    </span>
+                  </Link>
+                </div>
                 <p>
                   I am a dedicated and results-driven professional with a robust
                   academic background in Enterprise System Analysis & Design

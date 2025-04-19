@@ -34,9 +34,9 @@ const ContactMe = () => {
 
   const inView = useInView(view);
   return (
-    <div className="py-20 mb-20">
-      <div className="my-10 flex justify-center items-center flex-col">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl  font-bold place-items-start text-base-color mb-5">
+    <div className="py-20 bg-background-color text-base-color">
+      <div className="mb-10 flex justify-center items-center flex-col">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl  font-bold place-items-start text-secondary-color mb-5">
           Contact With Me
         </h1>
 
